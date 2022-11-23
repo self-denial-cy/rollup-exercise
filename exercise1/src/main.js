@@ -8,3 +8,9 @@ fn2();
 console.log('this is main');
 
 console.log(answer);
+
+const set = new Set();
+
+set.add(Promise.resolve(true));
+
+export default set;
