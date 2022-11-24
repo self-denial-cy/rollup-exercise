@@ -6,14 +6,8 @@ const commonjs = require('@rollup/plugin-commonjs');
 module.exports = {
     input: path.join(__dirname, './src/main.js'),
     output: {
-        format: 'umd',
-        name: 'set',
-        file: path.join(__dirname, './dist/bundle.js'),
-        globals: {
-            '@babel/runtime-corejs3/core-js-stable/set': '_Set',
-            '@babel/runtime-corejs3/core-js-stable/promise': '_Promise',
-            '@babel/runtime-corejs3/core-js-stable/instance/includes': '_includesInstanceProperty'
-        }
+        format: 'es',
+        file: path.join(__dirname, './dist/bundle.js')
     },
     plugins: [
         resolve(),

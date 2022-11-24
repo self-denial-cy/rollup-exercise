@@ -13,4 +13,10 @@ const set = new Set();
 
 set.add(Promise.resolve(true));
 
+async function fn() {
+    console.log('this is async function');
+}
+
+fn().then(r => console.log('end'));
+
 export default set;
