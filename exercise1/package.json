@@ -14,5 +14,11 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.20.1",
     "the-answer": "^1.0.0"
-  }
+  },
+  "main": "./dist/bundle.cjs.js",
+  "module": "./dist/bundle.esm.js",
+  "browser": "./dist/bundle.umd.js",
+  "files": [
+    "dist"
+  ]
 }
