@@ -19,4 +19,17 @@ async function fn() {
 
 fn().then(r => console.log('end'));
 
+class Cat {
+    constructor(name) {
+        this.name = name;
+    }
+
+    miao() {
+        console.log(`${this.name} miao miao`);
+    }
+}
+
+const cat = new Cat('Tom');
+cat.miao();
+
 export default set;
