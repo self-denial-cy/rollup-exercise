@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'B',
+  name: 'VueComponentB',
   data() {
     return {
       num: 666
