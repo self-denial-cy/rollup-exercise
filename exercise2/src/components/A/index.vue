@@ -8,19 +8,32 @@
 </template>
 
 <script>
+import answer from 'the-answer'
+
 export default {
   name: 'VueComponentA',
   data() {
     return {
+      set: new Set(),
       num: 666
     }
   },
+  created() {
+    async function fn() {
+      console.log('this is async function')
+    }
+
+    fn()
+  },
   methods: {
     increase() {
-      this.num++
+      this.set.add(this.num++)
+      console.log(answer)
     },
     decrease() {
+      this.set.delete(this.num--)
       this.num--
+      console.log(answer)
     }
   }
 }
