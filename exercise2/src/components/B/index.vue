@@ -17,10 +17,10 @@ export default {
   },
   methods: {
     increase() {
-      this.num++
+      this.num++;
     },
     decrease() {
-      this.num--
+      this.num--;
     }
   }
 }
