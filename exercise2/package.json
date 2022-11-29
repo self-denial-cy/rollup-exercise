@@ -4,10 +4,6 @@
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/preset-env": "^7.20.2",
-    "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "cross-env": "^7.0.3",
@@ -21,9 +17,11 @@
     "vue-template-compiler": "^2.7.14"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.20.1",
     "the-answer": "^1.0.0"
   },
   "browser": "./dist/bundle.js",
-  "module": "./dist/bundle.esm.js"
+  "module": "./dist/bundle.esm.js",
+  "files": [
+    "dist"
+  ]
 }

@@ -1,5 +1,5 @@
-import A from './components/A/index.js';
-import B from './components/B/index.js';
+import A from './A/index.js';
+import B from './B/index.js';
 
 export {
     A,

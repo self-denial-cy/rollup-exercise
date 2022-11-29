@@ -1,7 +1,6 @@
 const path = require('path');
 const resolve = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
-const babel = require('@rollup/plugin-babel');
 const {terser} = require('rollup-plugin-terser');
 const clear = require('rollup-plugin-clear');
 const progress = require('rollup-plugin-progress');
@@ -23,20 +22,6 @@ module.exports = [
         plugins: [
             resolve(),
             commonjs(),
-            babel({
-                exclude: ['node_modules/**'],
-                babelHelpers: 'bundled',
-                presets: [['@babel/preset-env', {
-                    useBuiltIns: false,
-                    modules: false
-                }]],
-                plugins: [['@babel/plugin-transform-runtime', {
-                    corejs: 3,
-                    helpers: false,
-                    regenerator: false,
-                    version: '^7.8.4'
-                }]]
-            }),
             isProd ? terser() : null,
             clear({
                 targets: ['dist']
@@ -57,20 +42,6 @@ module.exports = [
         plugins: [
             resolve(),
             commonjs(),
-            babel({
-                exclude: ['node_modules/**'],
-                babelHelpers: 'runtime',
-                presets: [['@babel/preset-env', {
-                    useBuiltIns: false,
-                    modules: false
-                }]],
-                plugins: [['@babel/plugin-transform-runtime', {
-                    corejs: 3,
-                    helpers: true,
-                    regenerator: true,
-                    version: '^7.8.4'
-                }]]
-            }),
             isProd ? terser() : null,
             clear({
                 targets: ['dist']
@@ -80,6 +51,6 @@ module.exports = [
             filesize(),
             vue()
         ],
-        external: id => id.includes('@babel/runtime-corejs3') || id.includes('the-answer')
+        external: id => id.includes('the-answer')
     }
 ];
