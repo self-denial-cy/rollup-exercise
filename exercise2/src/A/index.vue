@@ -39,10 +39,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h4 {
+    color: red;
+  }
 }
 </style>

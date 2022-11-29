@@ -1,3 +1,4 @@
+import './index.less';
 import A from './A/index.js';
 import B from './B/index.js';
 

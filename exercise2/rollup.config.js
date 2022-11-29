@@ -7,6 +7,8 @@ const progress = require('rollup-plugin-progress');
 const sizes = require('rollup-plugin-sizes');
 const filesize = require('rollup-plugin-filesize');
 const vue = require('rollup-plugin-vue');
+const postcss = require('rollup-plugin-postcss');
+const autoprefixer = require('autoprefixer');
 const pkg = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -29,7 +31,13 @@ module.exports = [
             progress(),
             sizes(),
             filesize(),
-            vue()
+            vue({
+                css: false
+            }),
+            postcss({
+                extract: true,
+                plugins: [autoprefixer()]
+            })
         ]
     },
     {
@@ -49,7 +57,13 @@ module.exports = [
             progress(),
             sizes(),
             filesize(),
-            vue()
+            vue({
+                css: false
+            }),
+            postcss({
+                extract: true,
+                plugins: [autoprefixer()]
+            })
         ],
         external: id => id.includes('the-answer')
     }
