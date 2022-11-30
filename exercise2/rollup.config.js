@@ -36,7 +36,10 @@ module.exports = [
             }),
             postcss({
                 extract: true,
-                plugins: [autoprefixer()]
+                minimize: isProd,
+                plugins: [
+                    autoprefixer()
+                ]
             })
         ]
     },
@@ -62,7 +65,10 @@ module.exports = [
             }),
             postcss({
                 extract: true,
-                plugins: [autoprefixer()]
+                minimize: isProd,
+                plugins: [
+                    autoprefixer()
+                ]
             })
         ],
         external: id => id.includes('the-answer')

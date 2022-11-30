@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .container {
   display: flex;
   flex-direction: column;
